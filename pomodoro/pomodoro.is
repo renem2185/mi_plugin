@@ -1,0 +1,56 @@
+/// @ 0.16.0
+### {
+  name: "ミス廃専用ポモドーロタイマー"
+  version: "0.1.0"
+  author: "@renem2185@mi.tsujigoya.net"
+  description: "タブを開くと勝手にタイマースタートしてくれます　リロードすると最初からになるのでご注意を"
+  permissions: ["write:notifications"]
+  config: {
+    timer_for: {
+      type: "number"
+      label: "タイマーの長さ [分]"
+      description: "ポモドーロセッションの長さを変更します、デフォルトは25分です"
+      default: 25
+    }
+    break_for: {
+      type: "number"
+      label: "休憩時間 [分]"
+      description: "セッション終了後の休憩時間を変更します、デフォルトは5分です"
+      default: 5
+    }
+  }
+}
+
+// 登場人物たち
+let noticeIcon = "https://mi.tsujigoya.net/files/d2053e36-3b54-45eb-a34c-00faade846f2"
+
+let timerNotice = {
+  header: `{Plugin:config.timer_for}分経ちました`
+  body: "おつかれさまです、一休みしませんか？"
+  icon: noticeIcon
+}
+
+let brakeNotice = {
+  header: `{Plugin:config.break_for}分休憩できましたか？`
+  body: "ページをリロードすると、次のセッションが始まります"
+  icon: noticeIcon
+}
+
+let millisecond = 1 // using Core:sleep()
+let second = 1000*millisecond
+let minute = 60*second
+
+// やること
+@createNotice(notice){
+  Mk:api("notifications/create", notice)
+}
+
+@main() {
+  Core:sleep(Plugin:config.timer_for*minute)
+  createNotice(timerNotice)
+  Core:sleep(Plugin:config.break_for*minute)
+  createNotice(brakeNotice)
+}
+
+main()
+
