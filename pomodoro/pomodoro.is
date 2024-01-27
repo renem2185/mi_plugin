@@ -30,7 +30,7 @@ let timerNotice = {
   icon: noticeIcon
 }
 
-let brakeNotice = {
+let breakNotice = {
   header: `{Plugin:config.break_for}分休憩できましたか？`
   body: "ページをリロードすると、次のセッションが始まります"
   icon: noticeIcon
@@ -49,7 +49,7 @@ let minute = 60*second
   Core:sleep(Plugin:config.timer_for*minute)
   createNotice(timerNotice)
   Core:sleep(Plugin:config.break_for*minute)
-  createNotice(brakeNotice)
+  createNotice(breakNotice)
 }
 
 main()
