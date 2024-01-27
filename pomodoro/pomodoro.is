@@ -18,22 +18,26 @@
       description: "セッション終了後の休憩時間を変更します、デフォルトは5分です"
       default: 5
     }
+    notice_icon: {
+      type: "string"
+      label: "通知アイコンにする画像 (URL)"
+      description: ""
+      default: "https://mi.tsujigoya.net/files/d2053e36-3b54-45eb-a34c-00faade846f2"
+    }
   }
 }
 
 // 登場人物たち
-let noticeIcon = "https://mi.tsujigoya.net/files/d2053e36-3b54-45eb-a34c-00faade846f2"
-
 let timerNotice = {
   header: `{Plugin:config.timer_for}分経ちました`
   body: "おつかれさまです、一休みしませんか？"
-  icon: noticeIcon
+  icon: Plugin:config.notice_icon
 }
 
 let breakNotice = {
   header: `{Plugin:config.break_for}分休憩できましたか？`
   body: "ページをリロードすると、次のセッションが始まります"
-  icon: noticeIcon
+  icon: Plugin:config.notice_icon
 }
 
 let millisecond = 1 // using Core:sleep()
