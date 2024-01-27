@@ -20,9 +20,9 @@
     }
     notice_icon: {
       type: "string"
-      label: "通知アイコンにする画像 (URL)"
-      description: "画像の参照先が弊サーバだと気になる、って方は変更してください　同じ画像がGitHubにもあります"
-      default: "https://mi.tsujigoya.net/files/d2053e36-3b54-45eb-a34c-00faade846f2"
+      label: "通知アイコン (URL)"
+      description: "アイコンにする画像を変更します、デフォルトではGitHubを参照します"
+      default: "https://raw.githubusercontent.com/renem2185/mi_plugin/main/pomodoro/timer-san.webp"
     }
   }
 }
