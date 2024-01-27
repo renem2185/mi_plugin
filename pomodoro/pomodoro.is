@@ -21,7 +21,7 @@
     notice_icon: {
       type: "string"
       label: "通知アイコンにする画像 (URL)"
-      description: ""
+      description: "画像の参照先が弊サーバだと気になる、って方は変更してください　同じ画像がGitHubにもあります"
       default: "https://mi.tsujigoya.net/files/d2053e36-3b54-45eb-a34c-00faade846f2"
     }
   }
