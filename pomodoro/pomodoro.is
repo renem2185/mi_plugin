@@ -1,7 +1,7 @@
 /// @ 0.16.0
 ### {
   name: "ミス廃専用ポモドーロタイマー"
-  version: "0.2.0"
+  version: "0.2.1"
   author: "@renem2185@mi.tsujigoya.net"
   description: "タブを開くと勝手にタイマースタートしてくれます　リロードすると最初からになるのでご注意を"
   permissions: ["write:notifications"]
